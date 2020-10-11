@@ -44,8 +44,17 @@ weekdays = [("mon", "Понедельник"), ("tue", "Вторник"), ("wed"
             ("sat", "Суббота"), ("sun", "Воскресенье")]
 
 #загрузка данных
-with open("data.json", "r") as r:
-    goals, teachers = (json.load(r)).values()
+try:
+    f = open('data.json', 'r')
+    goals, teachers = (json.load(f)).values()
+    f.close()
+except FileNotFoundError:
+    from data import goals,teachers
+    with open("data.json", "w") as f:
+        json.dump({'goals': goals, 'teachers': teachers}, f, indent=4, ensure_ascii=False)
+
+#with open("data.json", "r") as r:
+#    goals, teachers = (json.load(r)).values()
 
 app = Flask(__name__)
 csrf = CSRFProtect(app)
