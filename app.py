@@ -49,7 +49,8 @@ with open("data.json", "r") as r:
 
 app = Flask(__name__)
 csrf = CSRFProtect(app)
-SECRET_KEY = os.urandom(43)  # Создаем рандомнй ключ
+#SECRET_KEY = os.urandom(43)  # Создаем рандомнй ключ
+SECRET_KEY="ezfremfejt4ijg45jgdl;g"
 app.config['SECRET_KEY'] = SECRET_KEY
 
 
