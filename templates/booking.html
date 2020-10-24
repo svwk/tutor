@@ -2,7 +2,8 @@
 {% block container %}
     <div class="row mt-5">
         <div class="col-10 col-md-6 offset-1 offset-md-3 mb-3">
-            <form action="/booking/{{ t.id }}/{{ weekday[0] }}/{{ time }}" class="card mb-3" method="POST">
+            <form action="{{ url_for('render_booking_item',teacher_id=t.id,weekday= weekday[0],time=time) }}"
+                  class="card mb-3" method="POST">
                 {{ form.csrf_token() }}
                 <div class="card-body text-center pt-5">
                     <img src="/static/images/{{ t.picture }}" class="mb-3" width="95" alt="">

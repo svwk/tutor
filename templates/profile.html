@@ -5,7 +5,6 @@
             <article class="row">
                 <div class="col-5"><img src="/static/images/{{ t.picture }}" class="img-fluid" alt=""></div>
                 <div class="col-7">
-
                     <section class="teacher=info">
                         <h1 class="h2">{{ t.name }}</h1>
                         <div class="row">
@@ -31,7 +30,7 @@
                             {% if True in (t['free'][day[0]]).values() %}
                                 {% for hour, status in (t['free'][day[0]]).items() %}
                                     {% if status==True %}
-                                        <a href="/booking/{{ t.id }}/{{ day[0] }}/{{ hour }}"
+                                        <a href="{{ url_for('render_booking_item', teacher_id=t.id, weekday= day[0], time = hour ) }}"
                                            class="btn btn-outline-success mr-2 my-2">{{ hour }} свободно</a>
                                     {% endif %}
                                 {% endfor %}
