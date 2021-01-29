@@ -8,7 +8,7 @@ from flask_wtf.csrf import CSRFProtect
 import wtforms
 from wtforms import validators
 
-TIME_VALUES = ("8:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00", "22:00", "24:00")
+TIME_VALUES = ("8:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00", "22:00")
 DAY_VALUES = ("mon", "tue", "wed", "thu", "fri", "sat", "sun")
 TEL_REG = r'^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$'
 WEEKDAYS = (("mon", "Понедельник"), ("tue", "Вторник"), ("wed", "Среда"), ("thu", "Четверг"), ("fri", "Пятница"),
